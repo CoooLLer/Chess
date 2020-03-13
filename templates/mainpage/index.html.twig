@@ -48,7 +48,7 @@
             </table>
 
             <h2>Possible moves</h2>
-
+            <h3>Now moving {{ whoseMove }}</h3>
             <ul>
             {% for move in moves %}
                 <li>Piece: {{ move.pieceName }}. From position {{ move.from }} to {{ move.to }} with mode {{ move.flagsNames }}</li>

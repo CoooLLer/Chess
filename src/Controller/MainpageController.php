@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Model\ChessGame;
-use App\Service\ChessService;
 use App\Validator\FenString;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -36,7 +35,8 @@ class MainpageController extends AbstractController
         return $this->render('mainpage/index.html.twig', [
             'form' => $form->createView(),
             'board' => $chess->boardArray(),
-            'moves' => $chess->moves()
+            'moves' => $chess->moves(),
+            'whoseMove' => $chess->turnFull()
         ]);
     }
 }

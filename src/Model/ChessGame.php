@@ -6,7 +6,6 @@ namespace App\Model;
 
 use App\Interfaces\ChessPieceInterface;
 use App\Service\ChessPieceGenerator;
-use App\Service\ChessService;
 
 
 class ChessGame
@@ -792,6 +791,14 @@ class ChessGame
     public function turn()
     {
         return $this->turn;
+    }
+
+    /**
+     * Return full color name of moving side
+     */
+    public function turnFull()
+    {
+        return $this->turn() === self::BLACK ? 'black' : 'white';
     }
 
     /**
