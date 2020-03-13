@@ -26,9 +26,9 @@
                 </tr>
                 {% for row in board %}
                     <tr class="chess-row">
-                        <td>{{ loop.index }}</td>
+                        <td>{{ 9 - loop.index }}</td>
                         {% for column in row %}
-                            <td class="chess-piece">{{ column | chessSymbolToFontawesomeIcon }}</td>
+                            <td class="chess-piece{% if (loop.parent.loop.index + loop.index) % 2 != 0 %} black-square{% endif %}">{{ column | chessSymbolToFontawesomeIcon }}</td>
                         {% endfor %}
                         <td>{{ 9 - loop.index }}</td>
                     </tr>
